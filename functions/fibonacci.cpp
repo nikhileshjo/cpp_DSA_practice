@@ -14,14 +14,19 @@ int nthFib(int n)
     }
     else
     {
-        return nthFib(n - 1) + nthFib(n - 2);
+        int n = 0, m = 1, sum = 0;
+        for (int i = 2; i <= n; i++)
+        {
+            sum = n + m;
+            n = m;
+            m = sum;
+        }
+        return sum;
     }
 }
 
 int main()
 {
-    
-
     cout << nthFib(50) << endl;
 
     return 0;
